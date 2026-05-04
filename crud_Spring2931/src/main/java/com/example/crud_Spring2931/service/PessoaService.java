@@ -18,6 +18,30 @@ public class PessoaService {
         return repository.findAll();
 
     }
+    //read buscar por id
+    public  Pessoa buscarPorId(Long id){
+
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Pessoa não encontrada."));
+    }
+    //create
+    public Pessoa salvar(Pessoa pessoa){
+        return repository.save(pessoa);
+
+    }
+    //update
+    public Pessoa atualizar(Long id, Pessoa dados){
+        Pessoa pessoa = buscarPorId(id);
+        pessoa.setNome(dados.getNome());
+        pessoa.setIdade(dados.getIdade());
+
+        return repository.save(pessoa);
+
+    }
+    //delete
+    public void excluir(Long id){
+        repository.deleteById(id);
+    }
 
 
     

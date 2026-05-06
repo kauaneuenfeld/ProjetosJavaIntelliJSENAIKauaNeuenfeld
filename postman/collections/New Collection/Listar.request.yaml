@@ -1,0 +1,5 @@
+$kind: http-request
+name: Listar
+url: localhost:8082/pessoas
+method: GET
+order: 1847223750008605

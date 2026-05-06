@@ -1,0 +1,5 @@
+$kind: http-request
+name: Deletar
+url: ""
+method: DELETE
+order: 4104200023864005

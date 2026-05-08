@@ -1,5 +1,8 @@
 $kind: http-request
 name: Deletar
-url: ""
+url: localhost:8082/alunos/2
 method: DELETE
+body:
+  type: json
+  content: ""
 order: 4104200023864005

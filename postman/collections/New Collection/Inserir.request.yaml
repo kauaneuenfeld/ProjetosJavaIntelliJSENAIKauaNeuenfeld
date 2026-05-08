@@ -1,5 +1,0 @@
-$kind: http-request
-name: Inserir
-url: ""
-method: POST
-order: 1778067838934

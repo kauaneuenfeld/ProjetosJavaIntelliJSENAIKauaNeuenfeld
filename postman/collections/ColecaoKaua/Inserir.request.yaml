@@ -1,0 +1,16 @@
+$kind: http-request
+name: Inserir
+url: localhost:8082/alunos
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"nome\": \"Carlos\",\r
+
+    \    \"curso\": \"Redes\",\r
+
+    \    \"matricula\": \"2024002\"\r
+
+    }"
+order: 1778067838934

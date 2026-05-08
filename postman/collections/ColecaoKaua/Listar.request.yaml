@@ -1,5 +1,8 @@
 $kind: http-request
 name: Listar
-url: localhost:8082/pessoas
+url: localhost:8082/alunos
 method: GET
+body:
+  type: json
+  content: ""
 order: 1847223750008605

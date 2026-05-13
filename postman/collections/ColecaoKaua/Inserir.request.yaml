@@ -1,16 +1,18 @@
 $kind: http-request
 name: Inserir
-url: localhost:8082/alunos
+url: localhost:8082/usuarios
 method: POST
 body:
   type: json
   content: "{\r
 
-    \    \"nome\": \"Carlos\",\r
+    \"nickname\":\"FireMage\",\r
 
-    \    \"curso\": \"Redes\",\r
+    \"email\":\"fire@game.com\",\r
 
-    \    \"matricula\": \"2024002\"\r
+    \"jogoFavorito\":\"World of Warcraft\",\r
+
+    \"nivel\":78\r
 
     }"
 order: 1778067838934

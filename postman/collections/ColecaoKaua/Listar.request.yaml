@@ -1,6 +1,6 @@
 $kind: http-request
 name: Listar
-url: localhost:8082/alunos
+url: localhost:8082/usuarios
 method: GET
 body:
   type: json

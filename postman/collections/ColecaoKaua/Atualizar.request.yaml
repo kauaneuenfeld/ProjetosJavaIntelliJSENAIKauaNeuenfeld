@@ -1,16 +1,20 @@
 $kind: http-request
 name: Atualizar
-url: localhost:8082/alunos/1
+url: localhost:8082/usuarios/1
 method: PUT
 body:
   type: json
   content: "{\r
 
-    \    \"nome\": \"Ana Paula\",\r
+    \"nickname\":\"ShadowHunterPro\"\r
 
-    \    \"curso\": \"Des. Sistemas\",\r
+    ,\"email\":\"shadow@game.com\",\r
 
-    \    \"matricula\": \"2024001\"\r
+    \"jogoFavorito\":\"Leagueof Legends\",\r
 
-    }"
+    \"nivel\":50\r
+
+    }\r
+
+    \r\n"
 order: 4042342527253255

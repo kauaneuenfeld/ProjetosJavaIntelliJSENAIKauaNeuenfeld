@@ -1,6 +1,6 @@
 $kind: http-request
 name: Deletar
-url: localhost:8082/alunos/2
+url: localhost:8082/usuarios/2
 method: DELETE
 body:
   type: json

@@ -24,8 +24,8 @@ public class UsuarioGamerController {
     public ResponseEntity<UsuarioGamer> buscar(@PathVariable Long id){return ResponseEntity.ok(service.buscarPorId(id));}
 
     @PostMapping
-    public  ResponseEntity<UsuarioGamer> salvar(@RequestBody UsuarioGamer Usuarios){
-        return ResponseEntity.ok(service.salvar(Usuarios));
+    public  ResponseEntity<UsuarioGamer> salvar(@RequestBody UsuarioGamer usuarios){
+        return ResponseEntity.ok(service.salvar(usuarios));
     }
 
     @PutMapping("/{id}")

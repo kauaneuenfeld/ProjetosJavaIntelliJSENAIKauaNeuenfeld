@@ -22,17 +22,17 @@ public class UsuarioGamerService {
                 .orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
     }
 
-    public UsuarioGamer salvar(UsuarioGamer Usuarios){
-        return repository.save(Usuarios);
+    public UsuarioGamer salvar(UsuarioGamer usuarios){
+        return repository.save(usuarios);
     }
 
     public UsuarioGamer atualizar(Long id, UsuarioGamer dados){
-        UsuarioGamer Usuarios = buscarPorId(id);
-        Usuarios.setNickname(dados.getNickname());
-        Usuarios.setEmail(dados.getEmail());
-        Usuarios.setNivel(dados.getNivel());
-        Usuarios.setJogoFavorito(dados.getJogoFavorito());
-        return repository.save(Usuarios);
+        UsuarioGamer usuarios = buscarPorId(id);
+        usuarios.setNickname(dados.getNickname());
+        usuarios.setEmail(dados.getEmail());
+        usuarios.setNivel(dados.getNivel());
+        usuarios.setJogoFavorito(dados.getJogoFavorito());
+        return repository.save(usuarios);
     }
 
     public void excluir(Long id){repository.deleteById(id);}

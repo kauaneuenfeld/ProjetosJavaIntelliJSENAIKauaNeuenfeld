@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class AlunoGamerService {
+public class UsuarioGamerService {
 
     private final UsuarioGamerRepository repository;
 

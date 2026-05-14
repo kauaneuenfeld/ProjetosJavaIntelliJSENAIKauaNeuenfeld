@@ -21,5 +21,4 @@ public class UsuarioGamer {
     private String email;
     private String jogoFavorito;
     private Integer nivel;
-
 }

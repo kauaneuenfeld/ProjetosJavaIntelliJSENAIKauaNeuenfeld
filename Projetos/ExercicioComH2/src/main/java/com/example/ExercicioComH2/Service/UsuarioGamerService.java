@@ -13,20 +13,20 @@ public class UsuarioGamerService {
 
     private final UsuarioGamerRepository repository;
 
-    public List<UsuarioGamer> listar(){
+    public List<UsuarioGamer> listar() {
         return repository.findAll();
     }
 
-    public UsuarioGamer buscarPorId(Long id){
+    public UsuarioGamer buscarPorId(Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
     }
 
-    public UsuarioGamer salvar(UsuarioGamer usuarios){
+    public UsuarioGamer salvar(UsuarioGamer usuarios) {
         return repository.save(usuarios);
     }
 
-    public UsuarioGamer atualizar(Long id, UsuarioGamer dados){
+    public UsuarioGamer atualizar(Long id, UsuarioGamer dados) {
         UsuarioGamer usuarios = buscarPorId(id);
         usuarios.setNickname(dados.getNickname());
         usuarios.setEmail(dados.getEmail());
@@ -35,6 +35,8 @@ public class UsuarioGamerService {
         return repository.save(usuarios);
     }
 
-    public void excluir(Long id){repository.deleteById(id);}
+    public void excluir(Long id) {
+        repository.deleteById(id);
+    }
 
 }

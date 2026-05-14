@@ -13,28 +13,30 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UsuarioGamerController {
 
-    private  final UsuarioGamerService service;
+    private final UsuarioGamerService service;
 
     @GetMapping
-    public List<UsuarioGamer> listar(){
+    public List<UsuarioGamer> listar() {
         return service.listar();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UsuarioGamer> buscar(@PathVariable Long id){return ResponseEntity.ok(service.buscarPorId(id));}
+    public ResponseEntity<UsuarioGamer> buscar(@PathVariable Long id) {
+        return ResponseEntity.ok(service.buscarPorId(id));
+    }
 
     @PostMapping
-    public  ResponseEntity<UsuarioGamer> salvar(@RequestBody UsuarioGamer usuarios){
+    public ResponseEntity<UsuarioGamer> salvar(@RequestBody UsuarioGamer usuarios) {
         return ResponseEntity.ok(service.salvar(usuarios));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UsuarioGamer> atualizar(@PathVariable Long id, @RequestBody UsuarioGamer dados){
-        return  ResponseEntity.ok(service.atualizar(id, dados));
+    public ResponseEntity<UsuarioGamer> atualizar(@PathVariable Long id, @RequestBody UsuarioGamer dados) {
+        return ResponseEntity.ok(service.atualizar(id, dados));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> excluir(@PathVariable Long id){
+    public ResponseEntity<Void> excluir(@PathVariable Long id) {
         service.excluir(id);
         return ResponseEntity.noContent().build();
     }

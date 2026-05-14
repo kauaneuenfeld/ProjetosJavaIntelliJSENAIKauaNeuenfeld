@@ -18,28 +18,31 @@ public class PessoaController {
 
     //GET /pessoas (listar todas)
     @GetMapping
-    public List<Pessoa>listar(){
+    public List<Pessoa> listar() {
         return service.listar();
 
     }
 
     //Get /pessoas/{id} (buscar por id)
     @GetMapping("/{id}")
-    public ResponseEntity<Pessoa> buscar(@PathVariable Long id){
+    public ResponseEntity<Pessoa> buscar(@PathVariable Long id) {
         return ResponseEntity.ok(service.buscarPorId(id));
     }
+
     //Post /pessoas/{id}
     @PostMapping
-    public  ResponseEntity<Pessoa> salvar(@RequestBody Pessoa pessoa){
+    public ResponseEntity<Pessoa> salvar(@RequestBody Pessoa pessoa) {
         return ResponseEntity.ok(service.salvar(pessoa));
     }
+
     //Put /pessoas/{id} (atualizar)
-    public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, @RequestBody Pessoa dados){
+    public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, @RequestBody Pessoa dados) {
         return ResponseEntity.ok(service.atualizar(id, dados));
     }
+
     //delete /pessoas/{id}
     @DeleteMapping("/{id}")
-    public  ResponseEntity<Void> excluir(@PathVariable Long id){
+    public ResponseEntity<Void> excluir(@PathVariable Long id) {
         service.excluir(id);
         return ResponseEntity.noContent().build();
     }

@@ -14,23 +14,26 @@ public class PessoaService {
     private final PessoaRepository repository;
 
     //read
-    public List<Pessoa> listar(){
+    public List<Pessoa> listar() {
         return repository.findAll();
 
     }
+
     //read buscar por id
-    public  Pessoa buscarPorId(Long id){
+    public Pessoa buscarPorId(Long id) {
 
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Pessoa não encontrada."));
     }
+
     //create
-    public Pessoa salvar(Pessoa pessoa){
+    public Pessoa salvar(Pessoa pessoa) {
         return repository.save(pessoa);
 
     }
+
     //update
-    public Pessoa atualizar(Long id, Pessoa dados){
+    public Pessoa atualizar(Long id, Pessoa dados) {
         Pessoa pessoa = buscarPorId(id);
         pessoa.setNome(dados.getNome());
         pessoa.setIdade(dados.getIdade());
@@ -38,11 +41,11 @@ public class PessoaService {
         return repository.save(pessoa);
 
     }
+
     //delete
-    public void excluir(Long id){
+    public void excluir(Long id) {
         repository.deleteById(id);
     }
 
 
-    
 }

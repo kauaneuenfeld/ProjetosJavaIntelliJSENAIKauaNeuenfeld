@@ -184,7 +184,7 @@
                 Nickname <span class="required">*</span>
             </label>
             <input type="text"
-                   th:fild="*{nickname}"
+                   th:field="*{nickname}"
                    id="nickname"
                    placeholder="Digite o nickname completo"
                    required
@@ -229,7 +229,7 @@
         </div>
         <div class="btn-group">
             <button type="submit" class="btn btn-primary">
-                <span th:text="${Usuarios.id != nill} ? '💾 Atualizar' : '💾 Salvar'">Salvar</span>
+                <span th:text="${Usuarios.id != null} ? '💾 Atualizar' : '💾 Salvar'">Salvar</span>
             </button>
             <a th:href="@{/Usuarios}" class="btn btn-secondary">❌ Cancelar</a>
         </div>

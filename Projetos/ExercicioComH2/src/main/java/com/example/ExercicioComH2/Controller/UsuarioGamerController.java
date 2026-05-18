@@ -3,43 +3,47 @@ package com.example.ExercicioComH2.Controller;
 import com.example.ExercicioComH2.Model.UsuarioGamer;
 import com.example.ExercicioComH2.Service.UsuarioGamerService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@RequestMapping("/usuarios")
 @RequiredArgsConstructor
 public class UsuarioGamerController {
 
     private final UsuarioGamerService service;
 
-    @GetMapping
-    public List<UsuarioGamer> listar() {
-        return service.listar();
+    @GetMapping("/")
+    public String listar(Model model) {
+        model.addAttribute("usuarios", service.listar());
+        return "lista";
+
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<UsuarioGamer> buscar(@PathVariable Long id) {
-        return ResponseEntity.ok(service.buscarPorId(id));
+    @GetMapping("/novo")
+    public String novo(Model model) {
+        model.addAttribute("usuarios", new UsuarioGamer());
+        return "form";
     }
 
-    @PostMapping
-    public ResponseEntity<UsuarioGamer> salvar(@RequestBody UsuarioGamer usuarios) {
-        return ResponseEntity.ok(service.salvar(usuarios));
+    @PostMapping("/salvar")
+    public String salvar(UsuarioGamer usuarioGamer) {
+        service.salvar(usuarioGamer);
+        return "redirect:/Usuarios";
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<UsuarioGamer> atualizar(@PathVariable Long id, @RequestBody UsuarioGamer dados) {
-        return ResponseEntity.ok(service.atualizar(id, dados));
+    @GetMapping("/editar/{id}")
+    public String editar(@PathVariable Long id, Model model) {
+        UsuarioGamer usuarioGamer = service.buscarPorId(id);
+        model.addAttribute("usuarios", usuarioGamer);
+        return "form";
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> excluir(@PathVariable Long id) {
+    @GetMapping("/excluir/{id}")
+    public String excluir(@PathVariable Long id) {
         service.excluir(id);
-        return ResponseEntity.noContent().build();
+        return "redirect:/Usuarios";
     }
-
 }

@@ -4,11 +4,12 @@ import com.example.ExercicioComH2.Model.UsuarioGamer;
 import com.example.ExercicioComH2.Service.UsuarioGamerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/usuarios")
 @RequiredArgsConstructor
 public class UsuarioGamerController {

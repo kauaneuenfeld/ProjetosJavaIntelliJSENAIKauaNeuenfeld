@@ -173,7 +173,7 @@
     </header>
 
     <div class="info-box" th:if="${Usuarios.id != null}">
-        <p>💡 Você está editando: <strong th:text="${Usuarios.nome}">Nome</strong></p>
+        <p>💡 Você está editando: <strong th:text="${Usuarios.nickname}">Nome</strong></p>
     </div>
 
     <form th:action="@{/salvar}" th:object="${Usuarios}" method="post">
@@ -208,7 +208,7 @@
                 Jogo Favorito <span class="required">*</span>
             </label>
             <input type="text"
-            th:field="*{jogofavorito}"
+            th:field="*{jogoFavorito}"
             id="jogoFavorito"
             placeholder="Digite seu Jogo favorito"
             min="0"
@@ -231,7 +231,7 @@
             <button type="submit" class="btn btn-primary">
                 <span th:text="${Usuarios.id != null} ? '💾 Atualizar' : '💾 Salvar'">Salvar</span>
             </button>
-            <a th:href="@{/Usuarios}" class="btn btn-secondary">❌ Cancelar</a>
+            <a th:href="@{/}" class="btn btn-secondary">❌ Cancelar</a>
         </div>
     </form>
 </div>

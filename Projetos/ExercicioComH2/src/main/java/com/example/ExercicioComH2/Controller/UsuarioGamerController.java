@@ -17,33 +17,33 @@ public class UsuarioGamerController {
 
     @GetMapping("/")
     public String listar(Model model) {
-        model.addAttribute("usuarios", service.listar());
+        model.addAttribute("Usuarios", service.listar());
         return "lista";
 
     }
 
     @GetMapping("/novo")
     public String novo(Model model) {
-        model.addAttribute("usuarios", new UsuarioGamer());
+        model.addAttribute("Usuarios", new UsuarioGamer());
         return "form";
     }
 
     @PostMapping("/salvar")
     public String salvar(UsuarioGamer usuarioGamer) {
         service.salvar(usuarioGamer);
-        return "redirect:/Usuarios";
+        return "redirect:/";
     }
 
     @GetMapping("/editar/{id}")
     public String editar(@PathVariable Long id, Model model) {
         UsuarioGamer usuarioGamer = service.buscarPorId(id);
-        model.addAttribute("usuarios", usuarioGamer);
+        model.addAttribute("Usuarios", usuarioGamer);
         return "form";
     }
 
     @GetMapping("/excluir/{id}")
     public String excluir(@PathVariable Long id) {
         service.excluir(id);
-        return "redirect:/Usuarios";
+        return "redirect:/";
     }
 }

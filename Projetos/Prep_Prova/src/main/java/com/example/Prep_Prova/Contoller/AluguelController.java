@@ -2,6 +2,7 @@ package com.example.Prep_Prova.Contoller;
 
 import com.example.Prep_Prova.Model.Aluguel;
 import com.example.Prep_Prova.Repository.AluguelRepository;
+import com.example.Prep_Prova.Service.AluguelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,15 +13,15 @@ import java.util.List;
 public class AluguelController {
 
     @Autowired
-    private AluguelRepository repository;
+    private AluguelService service;
 
     @PostMapping
     public Aluguel salvar(@RequestBody Aluguel aluguel){
-        return repository.save(aluguel);
+        return service.salvar(aluguel);
     }
 
     @GetMapping
     public List<Aluguel> listar(){
-        return repository.findAll();
+        return service.listar();
     }
 }

@@ -1,8 +1,0 @@
-$kind: http-request
-name: Listar
-url: localhost:8082/usuarios
-method: GET
-body:
-  type: json
-  content: ""
-order: 1847223750008605
